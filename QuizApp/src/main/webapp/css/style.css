@@ -1,0 +1,157 @@
+/* Reset and base layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Animated background keyframes */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main container */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 95%;
+    text-align: center;
+    transition: transform 0.3s ease;
+    padding: 50px 40px; 
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Title & subtitle */
+.title {
+    font-size: 54px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Button group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Buttons */
+.btn {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    font-size: 18px; 
+    padding: 16px 0;
+}
+
+.login {
+    background: #f39c12;
+}
+
+.register {
+    background: #8e44ad;
+}
+
+.btn::after {
+    content: "→";
+    position: absolute;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05) rotate(-1deg);
+    opacity: 0.95;
+}
+
+.btn:hover::after {
+    opacity: 1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Tagline */
+.tagline {
+    font-size: 18px;
+    font-style: italic;
+    color: #6c5ce7;
+    margin-bottom: 20px;
+}
+
+/* Divider line */
+.divider {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #ff6b81, #fbc2eb, #a29bfe);
+    margin: 20px 0;
+    border-radius: 2px;
+}
+
+/* Intro paragraph */
+.intro {
+    font-size: 16px;
+    color: #2d3436;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Footer call-to-action */
+.footer-text {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #636e72;
+    font-style: italic;
+}
+
+.guest {
+    background: #00b894;
+}
+
+/* Optional: Unique hover effect for guest */
+.guest:hover {
+    background: #00cec9;
+}
